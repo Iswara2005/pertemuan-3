@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <h1>Dimensi Ruang Dan Waktu</h1>
+  <h1>Ruang Bangun Persegi</h1>
 
   <div class="tengah">
     
     <div class="card">
-      <h1>Nina fest</h1>
+      <h1>Ruang Bangun Persegi</h1>
       <div class="cardbody">
 
         <form>
@@ -24,11 +24,19 @@
 
       </div>
       <div class="cardfooter">
-        <button class="btn1">Hitung</button>
+        <button class="btn1" onclick="hitung()">Hitung</button>
       </div>
     </div>
   </div>
 
+<script>
+function hitung(){
+  var pj = document.getElementById("PJ").value
+  var lb = document.getElementById("LB").value
+  var luas = pj*lb
+  console.log(luas)
+}
+</script>
 
 </body>
 </html>
