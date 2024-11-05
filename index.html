@@ -38,10 +38,10 @@
       var lb = document.getElementById("LB").value;
       var luas = pj*lb
       var res = "Hitung Luas Persegi<br>Nilai Panjang "+pj+", dan lebarnya "+lb+" menjadi; <br> Luas = Panjang x Lebar<br>Luas = "+pj+" x "+lb+"<br>Luas = "+luas 
-      var kll = 2*(pj+lb)
+      var pjlb = parseInt (pj) + parseInt (lb)
+      var kll = 2*pjlb
       res += "<br><br>Keliling Persegi<br>keliling = 2 X (panjang+lebar)"
       res += "<br>Keliling = 2 X ("+pj+"+"+lb+")"
-      var pjlb = pj +lb 
       res +="<br>Keliling = 2 X"+pjlb
       res +="<br>Keliling ="+ kll
       document.getElementById("hasil").innerHTML=res
