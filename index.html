@@ -3,20 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mencari luas dan kelililng segitiga</title>
-    <link rel="stylesheet" href="segitiga.css">
+    <title>Menghitung Luas dan Keliling Segitiga</title>
+    <link rel="stylesheet" href="segitiga.css"> 
 </head>
 <body>
-    <h4>Menghitung Luas dan Keliling Segitiga</h4>
-    <form>
-        <label>Alas: <input type="text" id="alas"></label><br>
-        <label>Tinggi: <input type="text" id="tinggi"></label><br>
-        <label>Luas: <input type="text" id="luas" disabled></label><br>
-        <label>Keliling: <input type="text" id="keliling" disabled></label><br>
-        <input type="button" value="Hitung" onClick="hitung()">
-    </form>
-    <script src="segitiga.js"></script>
-</body>
-</html>
+    <div class="container">
+        <h1>Hitung Luas dan Keliling Segitiga</h1>
+        <div class="input-group">
+            <label for="alas">Alas (a):</label>
+            <input type="number" id="alas" placeholder="Masukkan alas segitiga" required>
+        </div>
+
+        <div class="input-group">
+            <label for="tinggi">Tinggi (t):</label>
+            <input type="number" id="tinggi" placeholder="Masukkan tinggi segitiga" required>
+        </div>
+
+        <div class="input-group">
+            <label for="sisi">Sisi (s):</label>
+            <input type="number" id="sisi" placeholder="Masukkan panjang sisi segitiga" required>
+        </div>
+
+        <button id="hitungButton">Hitung</button>
+
+        <h2>Hasil</h2>
+        <div class="result-column" id="resultColumn">
+            <p id="luas"></p>
+            <p id="keliling"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("hitungButton").addEventListener("click", function() {
+            const alas = parseInt(document.getElementById("alas").value);
+            const tinggi = parseInt(document.getElementById("tinggi").value);
+            const sisi = parseInt(document.getElementById("sisi").value);
+
+            // Validasi input
+            if (isNaN(alas) || isNaN(tinggi) || isNaN(sisi)) {
+                alert("Harap masukkan semua nilai dengan benar!");
+                return;
+            }
+
+            // Menghitung luas
+            const luas = (alas * tinggi) / 2;
+
+            // Menghitung keliling
+            const keliling = sisi * 3; // Karena semua sisi sama
+
+           // Menampilkan hasil tanpa desimal
+            document.getElementById("luas").innerText = "Luas Segitiga: " + Math.round(luas) + " cm²";
+            document.getElementById("keliling").innerText = "Keliling Segitiga: " + Math.round(keliling) + " cm";
+
+            // Menampilkan kolom hasil
+            const resultColumn = document.getElementById("resultColumn");
+            resultColumn.style.display = "block"; // Pastikan kolom hasil terlihat
+        });
+    </script> <!-- Menghubungkan JavaScript -->
 </body>
 </html>
